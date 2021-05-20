@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+.content-center {
+    margin: auto;
+    text-align: center;
+}
+

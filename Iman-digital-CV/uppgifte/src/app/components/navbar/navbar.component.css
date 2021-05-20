@@ -1,0 +1,19 @@
+nav {
+    background: darkviolet;
+    padding: 1rem 0;
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 20%;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
