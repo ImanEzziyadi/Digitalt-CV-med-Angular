@@ -7,6 +7,7 @@
   
          <div class="row px-4">
              <div class="col-md-6 mb-3">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                  <input 
                   type="text"
                  class="form-control"
@@ -22,6 +23,7 @@
           
   
              <div class="col-md-6 mb-3">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                  <input 
                  type="text"
                  class="form-control"
@@ -40,6 +42,7 @@
   
          <div class="row px-4">
              <div class="col mb-3">
+                <span class="col-md-1 col-md-offset-2 text-center "><i class="far fa-envelope bigicon"></i></span>
                  <input 
                   type="text"
                    class="form-control"
@@ -57,12 +60,29 @@
           </div>
           <div class="row px-4">
              <div class="col mb-3">
-                <textarea 
+                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-pen-square bigicon"></i></span>
+                 <!-- <textarea 
                  class="form-control"
                  placeholder="Enter your massage for us here."
                  id="message"
                  name="message"
-                >
+                 rows="7"
+                 >
+                 </textarea> -->
+                 <textarea 
+                    type="text"
+                    class="form-control"
+                    placeholder="skriv din massage för oss här"
+                    formControlName="message"
+                    rows="7"
+                    [class.is-valid]="message.valid"
+                    [class.is-invalid]="message.invalid && (message.dirty && message.touched)"
+              
+                  >
+                 </textarea>
+                 <div class="text-danger" *ngIf="!message.valid && (message.touched || message.dirty)">
+                    <small>message måste innehålla minst två bokstäver</small>
+                </div>
              </div>
          </div>
           
@@ -73,15 +93,26 @@
         
   
        
-         <div class="row px-4">
-             <div class="col-md-12  text-center">
-                 <!-- <div class="col-md-12 "> -->
+         <!-- <div class="row px-4">
+             <div class="col-md-6 mb-3"> 
                  <button [disabled]="!contactForm.valid" class="btn btn-info w-100 " [class.btn-light]="!contactForm">Skicka</button>
                  <div class="col-md-6 mb-3">
                   <button type="reset" class="btn btn-primary w-100">Clear Registration Form</button>
                   </div>
              </div>
-           </div>
+           </div> -->
+           <div class="container ">
+            <div class="row">
+              <div class="col-md-6">
+                <button [disabled]="!contactForm.valid" class="btn btn-info w-100 " [class.btn-light]="!contactForm">Skicka</button>
+                
+                </div>
+              <div class="col-md-6"> 
+                  <button type="reset" class="btn btn-info w-100">Clear Form</button>
+                </div>
+              
+            </div>
+          </div>
 
         </div>
    </form>

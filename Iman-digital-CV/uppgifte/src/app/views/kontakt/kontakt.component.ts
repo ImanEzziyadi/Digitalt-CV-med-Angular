@@ -17,6 +17,7 @@ export class KontaktComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(2)]],
      
     });
     
@@ -25,6 +26,7 @@ export class KontaktComponent implements OnInit {
   get firstName() { return this.contactForm.get('firstName') as FormControl; }
   get lastName() { return this.contactForm.get('lastName') as FormControl; }
   get email() { return this.contactForm.get('email') as FormControl; }
+  get message() { return this.contactForm.get('message') as FormControl; }
  
 
   onSubmit() {
