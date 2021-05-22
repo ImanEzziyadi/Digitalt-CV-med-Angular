@@ -39,25 +39,48 @@
           </div>
   
          
-  
+          <div class="row px-4">
+            <div class="col mb-3">
+               <span class="col-md-1 col-md-offset-2 text-center "><i class="far fa-envelope bigicon"></i></span>
+                <input 
+                 type="text"
+                  class="form-control"
+                 placeholder="Email"
+                 formControlName="email"
+                 [class.is-valid]="email.valid"
+                 [class.is-invalid]="email.invalid && (email.dirty && email.touched)"
+                 pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+                >
+                <div class="text-danger" *ngIf="!email.valid && email.touched">
+                    <small *ngIf="email.errors?.required">Du måste ange ett e-postmeddelande</small>
+                    <small *ngIf="email.errors?.pattern">måste vara ett giltigt e-postmeddelande</small>
+                 </div>
+            </div>
+         </div>
+
          <div class="row px-4">
-             <div class="col mb-3">
-                <span class="col-md-1 col-md-offset-2 text-center "><i class="far fa-envelope bigicon"></i></span>
-                 <input 
-                  type="text"
-                   class="form-control"
-                  placeholder="Email"
-                  formControlName="email"
-                  [class.is-valid]="email.valid"
-                  [class.is-invalid]="email.invalid && (email.dirty && email.touched)"
-                  pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
-                 >
-                 <div class="text-danger" *ngIf="!email.valid && email.touched">
-                     <small *ngIf="email.errors?.required">Du måste ange ett e-postmeddelande</small>
-                     <small *ngIf="email.errors?.pattern">måste vara ett giltigt e-postmeddelande</small>
-                  </div>
-             </div>
-          </div>
+            <div class="col mb-3">
+               <span class="col-md-1 col-md-offset-2 text-center "><i class="fa fa-book-open bigicon"></i></span>
+                <input 
+                 type="text"
+                  class="form-control"
+                 placeholder="subject"
+                 formControlName="subject"
+                 [class.is-valid]="subject.valid"
+                 [class.is-invalid]="subject.invalid && (subject.dirty && subject.touched)"
+                
+                >
+                <div class="text-danger" *ngIf="!subject.valid && subject.touched">
+                 <small>subject måste innehålla minst två bokstäver </small>  
+                 </div>
+            </div>
+         </div>
+
+        
+
+
+
+         
           <div class="row px-4">
              <div class="col mb-3">
                  <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-pen-square bigicon"></i></span>
@@ -77,12 +100,11 @@
                     rows="7"
                     [class.is-valid]="message.valid"
                     [class.is-invalid]="message.invalid && (message.dirty && message.touched)"
-              
                   >
                  </textarea>
                  <div class="text-danger" *ngIf="!message.valid && (message.touched || message.dirty)">
                     <small>message måste innehålla minst två bokstäver</small>
-                </div>
+                 </div>
              </div>
          </div>
           
@@ -104,8 +126,7 @@
            <div class="container ">
             <div class="row">
               <div class="col-md-6">
-                <button [disabled]="!contactForm.valid" class="btn btn-info w-100 " [class.btn-light]="!contactForm">Skicka</button>
-                
+                 <button [disabled]="!contactForm.valid" class="btn btn-info w-100 " [class.btn-light]="!contactForm">Skicka</button>
                 </div>
               <div class="col-md-6"> 
                   <button type="reset" class="btn btn-info w-100">Clear Form</button>
