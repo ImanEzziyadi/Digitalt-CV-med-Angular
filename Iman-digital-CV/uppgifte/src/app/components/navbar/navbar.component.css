@@ -1,5 +1,4 @@
 nav {
-    background: darkviolet;
     padding: 1rem 0;
   }
   nav .container {
@@ -16,4 +15,9 @@ nav {
   a {
     color: #fff;
     text-decoration: none;
+  }
+  .active-nav:hover{
+   
+    background-color: rgb(190, 189, 194);
+   
   }
